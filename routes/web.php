@@ -16,3 +16,11 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/post', 'PostController@index');
+$router->post('/post', 'PostController@store');
+
+//$app->group(['middleware' => 'logged.in'], function($app) {
+//    $app->post('/post',     ['uses' => 'App\Http\Controller\PostController@store']);
+//    /** & another protected routes */
+//});
